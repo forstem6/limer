@@ -15,6 +15,8 @@ Load your API details and user credentials into R using `options()`:
 options(lime_api = 'http://example.com/limesurvey/admin/remotecontrol')
 options(lime_username = 'put_username_here')
 options(lime_password = 'put_password_here')
+
+Note: If you use an authentication other than Authdb (for example LDAP) you also need to specify the plugin  with options(lime_plugin = '<AuthenticationScheme>')
 ```
 
 Before calling the API, you need to generate an access token with `get_session_key()` (examples of how to do this are shown below). Many services provide tokens that last indefinitely, but by default LimeSurvey's will only last for two hours. (this can be modified by editing `limesurvey/application/config/config-default.php` and changing `$config['iSessionExpirationTime'] = 7200;` to something else). 
@@ -33,8 +35,15 @@ options(lime_api = 'http://example.com/limesurvey/admin/remotecontrol')
 options(lime_username = 'put_username_here')
 options(lime_password = 'put_password_here')
 
+#With LDAP authentication also run:
+#options(lime_plugin = 'AuthLDAP')
+
 # Do stuff with LimeSurvey API
 get_session_key()  # Log in
+
+#With LDAP run instead
+#get_session_key(plugin = 'AuthLDAP')  # Log in
+
 responses <- get_responses(12345)  # Get results from survey
 ```
 
