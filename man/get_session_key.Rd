@@ -4,13 +4,18 @@
 \alias{get_session_key}
 \title{Get a LimeSurvey API session key}
 \usage{
-get_session_key(username = getOption("lime_username"),
-  password = getOption("lime_password"))
+get_session_key(
+  username = getOption("lime_username"),
+  password = getOption("lime_password"),
+  plugin = NULL
+)
 }
 \arguments{
 \item{username}{LimeSurvey username. Defaults to value set in \code{options()}.}
 
-\item{password}{LimeSurvey password Defaults to value set in \code{options()}.}
+\item{password}{LimeSurvey password. Defaults to value set in \code{options()}.}
+
+\item{plugin}{Authentication plugin. Defaults to NULL. For LDAP first set \code{options("lime_plugin")} to #' 'AuthLDAP'.}
 }
 \value{
 API token
@@ -23,4 +28,3 @@ This function logs into the LimeSurvey API and provides an access session key.
 get_session_key()
 }
 }
-
