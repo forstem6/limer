@@ -15,7 +15,7 @@ get_session_key(
 
 \item{password}{LimeSurvey password. Defaults to value set in \code{options()}.}
 
-\item{plugin}{Authentication plugin. Defaults to NULL. For LDAP first set \code{options("lime_plugin")} to #' 'AuthLDAP'.}
+\item{plugin}{Authentication plugin. Defaults to NULL. For LDAP first set \code{options("lime_plugin")} to 'AuthLDAP'.}
 }
 \value{
 API token
