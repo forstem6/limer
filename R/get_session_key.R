@@ -18,7 +18,7 @@ get_session_key <- function(username = getOption('lime_username'),
   if (is.null(plugin)) {
     body.json = list(method = "get_session_key",
                      id = " ",
-                     params = list(admin = username,
+                     params = list(username = username,
                                    password = password))
   } else {
 
